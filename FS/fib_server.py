@@ -39,10 +39,9 @@ def register():
     clientSocket.sendto(app_json.encode(),(as_ip,int(as_port)))
     response, serverAddress = clientSocket.recvfrom(2048)
     clientSocket.close()
-    print("Got the response")
     response = response.decode()
     print(response)
-    return "Registration Done ",201
+    return "Registration Success",201
 
 @app.route('/fibonacci')
 def fibonacci():
